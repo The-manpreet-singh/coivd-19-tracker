@@ -3,6 +3,7 @@ import React from 'react';
 import classes from './App.module.css';
 import image from './assets/image.png';
 import Cards from './components/Cards/Cards';
+import fetchData from './Api/index';
 
 const app = () => {
   return (
