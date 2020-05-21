@@ -56,7 +56,7 @@ return (
       <Grid item xs={12} md={3} component={Card}  className={ cx(classes.card, classes.deaths) } >
       <CardContent>
         <Typography  color="textSecondary" gutterBottom>
-             Infected
+            Deaths
         </Typography>
         <Typography variant="h5" component="h2">
         <CountUp 
