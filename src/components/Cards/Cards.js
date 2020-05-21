@@ -4,14 +4,14 @@ import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import cx from 'classnames';
 import CountUp from 'react-countup';
 
-const cards = ({data: { confirmed, recovered, deaths, lastUpdate } }) => {
+const cards = ( props ) => {
  
-  if( !confirmed ) {
+  if( !props.data.confirmed ) {
     return 'Loading...';
   }
 
 return (
- <div className={classes.container}>npm 
+ <div className={classes.container}>
     <Grid container spacing={3} justify="center">
 
       <Grid item xs={12} md={3} component={Card} className={ cx(classes.card, classes.infected) } >
@@ -20,10 +20,10 @@ return (
            Infected
         </Typography>
         <Typography variant="h5" component="h2">
-          <CountUp start={0} end={confirmed.value} duration={2.75} separator="," />
+          <CountUp start={0} end={props.data.confirmed.value} duration={2.75} separator="," />
         </Typography>
         <Typography  color="textSecondary">
-          { new Date(lastUpdate).toDateString() }
+          { new Date(props.data.lastUpdate).toDateString() }
         </Typography>
         <Typography variant="body2" component="p">
           Number Of Active Cases of Covid19
@@ -40,12 +40,12 @@ return (
         <Typography variant="h5" component="h2">
         <CountUp 
                 start={0} 
-                end={recovered.value}
+                end={props.data.recovered.value}
                 duration={3}
                 separator="," />
         </Typography>
         <Typography  color="textSecondary">
-        { new Date(lastUpdate).toDateString() }
+        { new Date(props.data.lastUpdate).toDateString() }
         </Typography>
         <Typography variant="body2" component="p">
           Number Of Recover Cases of Covid19
@@ -61,12 +61,12 @@ return (
         <Typography variant="h5" component="h2">
         <CountUp 
                 start={0} 
-                end={deaths.value}
+                end={props.data.deaths.value}
                 duration={3}
                 separator="," />
         </Typography>
         <Typography  color="textSecondary">
-        { new Date(lastUpdate).toDateString() }
+        { new Date(props.data.lastUpdate).toDateString() }
         </Typography>
         <Typography variant="body2" component="p">
           Number Of Death Cases of Covid19
