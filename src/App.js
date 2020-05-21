@@ -8,7 +8,7 @@ const app = () => {
   return (
        <div className={classes.container}> 
              <img className={classes.image} src={image} alt='covid19' />
-             {/* <Cards /> */}
+              <Cards /> 
          </div>
      );
 };
