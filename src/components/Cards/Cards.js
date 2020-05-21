@@ -4,10 +4,14 @@ import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import cx from 'classnames';
 import CountUp from 'react-countup';
 
-const cards = (props) => {
-    return (
- <div className={classes.container}>
-          
+const cards = ({data: { confirmed, recovered, deaths, lastUpdate } }) => {
+ 
+  if( !confirmed ) {
+    return 'Loading...';
+  }
+
+return (
+ <div className={classes.container}>npm 
     <Grid container spacing={3} justify="center">
 
       <Grid item xs={12} md={3} component={Card} className={ cx(classes.card, classes.infected) } >
@@ -16,11 +20,7 @@ const cards = (props) => {
            Infected
         </Typography>
         <Typography variant="h5" component="h2">
-          {/* <CountUp 
-                start={0} 
-                end={confirmed.value}
-                duration={3}
-                separator="," /> */}
+          <CountUp start={0} end={confirmed.value} duration={2.75} separator="," />
         </Typography>
         <Typography  color="textSecondary">
           { new Date().toDateString() }

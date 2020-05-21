@@ -11,5 +11,4 @@ export const fetchData = async () => {
   } catch (err) {
       return err;
   }
-
 };

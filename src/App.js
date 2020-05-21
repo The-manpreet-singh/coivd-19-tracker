@@ -1,29 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import classes from './App.module.css';
+import { Cards } from './components';
+import { fetchData } from './Api/';
+import styles from './App.module.css';
+
 import image from './assets/image.png';
-import Cards from './components/Cards/Cards';
-import {fetchData} from './Api/index';
 
-class App extends Component {
-    state = {
-         data : {}
-    }
-   
-   async componentDidMount () {
-         const data = await fetchData();
-         this.setState({data});
-         console.log(data);
-    }
+class App extends React.Component {
+  state = {
+    data: {},
+    country: '',
+  }
 
-     render () {
+  async componentDidMount() {
+    const data = await fetchData();
 
-        return (
-       <div className={classes.container}> 
-             <img className={classes.image} src={image} alt='covid19' />
-              <Cards data={this.data} /> 
-         </div>
-     );
-};
-};
+    this.setState({ data });
+  }
+
+ 
+  render() {
+    const { data } = this.state;
+
+    return (
+      <div className={styles.container}>
+        <img className={styles.image} src={image} alt="COVID-19" />
+        <Cards data={data} />
+      </div>
+    );
+  }
+}
+
 export default App;
