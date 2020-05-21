@@ -23,7 +23,7 @@ return (
           <CountUp start={0} end={confirmed.value} duration={2.75} separator="," />
         </Typography>
         <Typography  color="textSecondary">
-          { new Date().toDateString() }
+          { new Date(lastUpdate).toDateString() }
         </Typography>
         <Typography variant="body2" component="p">
           Number Of Active Cases of Covid19
@@ -38,14 +38,14 @@ return (
              Recovered
         </Typography>
         <Typography variant="h5" component="h2">
-        {/* <CountUp 
+        <CountUp 
                 start={0} 
                 end={recovered.value}
                 duration={3}
-                separator="," /> */}
+                separator="," />
         </Typography>
         <Typography  color="textSecondary">
-        { new Date().toDateString() }
+        { new Date(lastUpdate).toDateString() }
         </Typography>
         <Typography variant="body2" component="p">
           Number Of Recover Cases of Covid19
@@ -59,14 +59,14 @@ return (
              Infected
         </Typography>
         <Typography variant="h5" component="h2">
-        {/* <CountUp 
+        <CountUp 
                 start={0} 
                 end={deaths.value}
                 duration={3}
-                separator="," /> */}
+                separator="," />
         </Typography>
         <Typography  color="textSecondary">
-        { new Date().toDateString() }
+        { new Date(lastUpdate).toDateString() }
         </Typography>
         <Typography variant="body2" component="p">
           Number Of Death Cases of Covid19
