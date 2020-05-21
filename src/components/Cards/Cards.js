@@ -13,17 +13,17 @@ const cards = (props) => {
       <Grid item xs={12} md={3} component={Card} className={ cx(classes.card, classes.infected) } >
       <CardContent>
         <Typography  color="textSecondary" gutterBottom>
-            <CountUp 
+           Infected
+        </Typography>
+        <Typography variant="h5" component="h2">
+          {/* <CountUp 
                 start={0} 
                 end={confirmed.value}
                 duration={3}
-                separator="," />
-        </Typography>
-        <Typography variant="h5" component="h2">
-            belent
+                separator="," /> */}
         </Typography>
         <Typography  color="textSecondary">
-          adjective
+          { new Date().toDateString() }
         </Typography>
         <Typography variant="body2" component="p">
           Number Of Active Cases of Covid19
@@ -38,14 +38,14 @@ const cards = (props) => {
              Recovered
         </Typography>
         <Typography variant="h5" component="h2">
-        <CountUp 
+        {/* <CountUp 
                 start={0} 
                 end={recovered.value}
                 duration={3}
-                separator="," />
+                separator="," /> */}
         </Typography>
         <Typography  color="textSecondary">
-          adjective
+        { new Date().toDateString() }
         </Typography>
         <Typography variant="body2" component="p">
           Number Of Recover Cases of Covid19
@@ -59,14 +59,14 @@ const cards = (props) => {
              Infected
         </Typography>
         <Typography variant="h5" component="h2">
-        <CountUp 
+        {/* <CountUp 
                 start={0} 
                 end={deaths.value}
                 duration={3}
-                separator="," />
+                separator="," /> */}
         </Typography>
         <Typography  color="textSecondary">
-          adjective
+        { new Date().toDateString() }
         </Typography>
         <Typography variant="body2" component="p">
           Number Of Death Cases of Covid19
