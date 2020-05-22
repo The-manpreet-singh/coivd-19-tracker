@@ -4,7 +4,7 @@ import {  NativeSelect , FormControl } from '@material-ui/core';
 
 import { fetchCountries } from '../../Api';
 
-const Countries = () => {
+const Countries = (props) => {
 
   const [countires, setCountries] = useState([]);
   //console.log(countires);
@@ -19,7 +19,7 @@ const Countries = () => {
 
     return (
         <FormControl className={classes.formControl} >
-          <NativeSelect defaultValue="" >
+          <NativeSelect defaultValue="" onChange={ (e) => props.onClicked(e.target.value) } >
               <option value="">Global</option>
              
               {countires.map( (country,id)=> <option key={id} value={country}>
