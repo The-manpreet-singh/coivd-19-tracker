@@ -17,8 +17,14 @@ class App extends React.Component {
     const data = await fetchData();
 
     this.setState({ data });
+   // console.log(data);
   }
 
+  countryChangeHandler = async (country) => {
+   const data = await fetchData(country) ;
+   this.setState({ data, country: country});
+   console.log(data);
+  }
  
   render() {
     const { data } = this.state;
@@ -27,7 +33,7 @@ class App extends React.Component {
       <div className={styles.container}>
         <img className={styles.image} src={image} alt="COVID-19" />
         <Cards data={data} />
-        <CountryPicker />
+        <CountryPicker onclicked={this.countryChangeHandler} />
       </div>
     );
   }
