@@ -16,13 +16,13 @@ return (
 
       <Grid item xs={12} md={3} component={Card} className={ cx(classes.card, classes.infected) } >
       <CardContent>
-        <Typography  color="textSecondary" gutterBottom>
+        <Typography color="textSecondary" gutterBottom>
            Infected
         </Typography>
         <Typography variant="h5" component="h2">
           <CountUp start={0} end={props.data.confirmed.value} duration={2.75} separator="," />
         </Typography>
-        <Typography  color="textSecondary">
+        <Typography color="textSecondary">
           { new Date(props.data.lastUpdate).toDateString() }
         </Typography>
         <Typography variant="body2" component="p">
@@ -34,7 +34,7 @@ return (
     
      <Grid item xs={12} md={3} component={Card}  className={ cx(classes.card, classes.recovered) } >
       <CardContent>
-        <Typography  color="textSecondary" gutterBottom>
+        <Typography color="textSecondary" gutterBottom>
              Recovered
         </Typography>
         <Typography variant="h5" component="h2">
@@ -44,7 +44,7 @@ return (
                 duration={3}
                 separator="," />
         </Typography>
-        <Typography  color="textSecondary">
+        <Typography color="textSecondary">
         { new Date(props.data.lastUpdate).toDateString() }
         </Typography>
         <Typography variant="body2" component="p">
@@ -55,7 +55,7 @@ return (
 
       <Grid item xs={12} md={3} component={Card}  className={ cx(classes.card, classes.deaths) } >
       <CardContent>
-        <Typography  color="textSecondary" gutterBottom>
+        <Typography color="textSecondary" gutterBottom>
             Deaths
         </Typography>
         <Typography variant="h5" component="h2">
@@ -65,7 +65,7 @@ return (
                 duration={3}
                 separator="," />
         </Typography>
-        <Typography  color="textSecondary">
+        <Typography color="textSecondary">
         { new Date(props.data.lastUpdate).toDateString() }
         </Typography>
         <Typography variant="body2" component="p">
