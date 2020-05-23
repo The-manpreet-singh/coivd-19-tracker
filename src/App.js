@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Cards, CountryPicker } from './components';
+import { Cards, CountryPicker, Chart } from './components';
 import { fetchData } from './Api/';
 import styles from './App.module.css';
 
