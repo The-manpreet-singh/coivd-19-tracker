@@ -9,8 +9,9 @@ import image from './assets/image.png';
 
 const App =()=> {
    const [data, setData]= useState({});
-   const [country, setCountry] = useState('');
+   const [countryData, setCountryData] = useState('');
 
+  // console.log(data);
    
   useEffect( () => {
     const data= async () => {
@@ -25,8 +26,9 @@ const App =()=> {
    const data = await fetchData(country) ;
    return (
          setData(data),
-         setCountry(country)
+         setCountryData(country)
    )
+   
   }
 
 
@@ -35,7 +37,7 @@ const App =()=> {
         <img className={styles.image} src={image} alt="COVID-19" />
         <Cards data={data} />
         <CountryPicker onClicked={countryChangeHandler} />
-        <Chart data={data} country={country} />
+        <Chart data={data} country={countryData} />
       </div>
     );
   }
